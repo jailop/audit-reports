@@ -7,5 +7,5 @@ This is a script to scrap audit reports and resolutions of judgments and account
 Datasets:
 
 - Audit reports ([XLSX](https://github.com/jailop/audit-reports/raw/master/audit-reports.xlsx), [CSV](https://github.com/jailop/audit-reports/raw/master/audit-reports.csv))
-- Resolutions of judgments of accounts ([XLSX](https://github.com/jailop/judgments-of-accounts/raw/master/audit-reports.xlsx), [CSV](https://github.com/jailop/judgments-of-accounts/raw/master/audit-reports.csv))
+- Resolutions of judgments of accounts ([XLSX](https://github.com/jailop/judgments-of-accounts/raw/master/judgments-of-accounts.xlsx), [CSV](https://github.com/jailop/judgments-of-accounts/raw/master/judgments-of-accounts.csv))
 
