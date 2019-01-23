@@ -13,9 +13,6 @@ import requests
 from lxml import html
 import pandas as pd
 
-site = "http://www.cortedecuentas.gob.sv"
-url_base = "/index.php/es/resultado-del-proceso-de-fiscalizacion/informes-finales-de-auditoria/"
-
 def getAdministrativeUnits(site, url):
     """
     This function get the link in which audit reports are indexed for each
@@ -80,7 +77,20 @@ def getReports(site, url):
     print("%s: %d records" % (url, len(out)))
     return out
     
-def scrap():
+def scrap_judgments_of_accounts():
+    site = "http://www.cortedecuentas.gob.sv"
+    url_base = "/index.php/es/resultado-del-proceso-de-fiscalizacion/sentencias-definitivas-ejecutoriadas"
+    links = getAdministrativeUnits(site, url_base)
+    df = getReports(site, links[0])
+    for l in links[1:]: 
+        out = getReports(site, l)
+        df = df.append(out)
+    df.to_csv("judgments-of-accounts.csv", index=False)
+    df.to_excel("judgments-of-accounts.xlsx", index=False)
+
+def scrap_audit_reports():
+    site = "http://www.cortedecuentas.gob.sv"
+    url_base = "/index.php/es/resultado-del-proceso-de-fiscalizacion/informes-finales-de-auditoria/"
     links = getAdministrativeUnits(site, url_base)
     df = getReports(site, links[0])
     for l in links[1:]: 
@@ -90,4 +100,5 @@ def scrap():
     df.to_excel("audit-reports.xlsx", index=False)
 
 if __name__ == "__main__":
-    scrap()
+    scrap_judgments_of_accounts()
+    scrap_audit_reports()
