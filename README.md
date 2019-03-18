@@ -2,7 +2,7 @@
 
 ![logo](cdec-logo.png)
 
-This is a script to scrap audit reports and resolutions of judgments and accounts published by Corte de Cuentas in El Salvador. Actually, it has 4,400 records in total.
+This is a script to scrap audit reports and resolutions of judgments and accounts published by Corte de Cuentas in El Salvador. Actually, it has 4,600 records in total.
 
 Datasets:
 

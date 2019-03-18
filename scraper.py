@@ -86,7 +86,7 @@ def scrap_judgments_of_accounts():
         out = getReports(site, l)
         df = df.append(out)
     df.to_csv("judgments-of-accounts.csv", index=False)
-    df.to_excel("judgments-of-accounts.xlsx", index=False)
+    # df.to_excel("judgments-of-accounts.xlsx", index=False)
 
 def scrap_audit_reports():
     site = "http://www.cortedecuentas.gob.sv"
@@ -97,7 +97,7 @@ def scrap_audit_reports():
         out = getReports(site, l)
         df = df.append(out)
     df.to_csv("audit-reports.csv", index=False)
-    df.to_excel("audit-reports.xlsx", index=False)
+    # df.to_excel("audit-reports.xlsx", index=False)
 
 if __name__ == "__main__":
     scrap_judgments_of_accounts()
